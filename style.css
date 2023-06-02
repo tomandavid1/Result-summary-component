@@ -178,15 +178,16 @@ h2 {
   height: var(--height);
   border-radius: calc(var(--height)/2);
   color: var(--clr-neutral-100);
-  background-color: var(--clr-accent-500);
+  background: linear-gradient(90deg, var(--clr-accent-500) 50%, hsl(244, 100%, 67%) 50%, hsl(241, 81%, 54%) 100%) var(--x, 0)/ 200%;
   border: 0;
   font-size: 1.2rem;
   font-weight: var(--fw-700);
+  transition: .5s;
 }
 .continue-summary:hover,
 .continue-summary:focus-visible {
   cursor: pointer;
-  background-image: var(--grad-bg);
+  --x: 100%;
 }
 
 @media (min-width: 50em){
@@ -209,10 +210,14 @@ h2 {
 
   .section-result {
     border-radius: 2rem;
-    display: flex;
+    display: grid;
     justify-content: space-around;
     flex-direction: column;
     padding: 2rem;
+  }
+
+  .section-result > h2 {
+    align-self: flex-start;
   }
 
   .section-summary {
