@@ -192,14 +192,31 @@ h2 {
 
 @media (min-width: 50em){
 
+  @keyframes moveBg {
+    from {
+      background-position: right;
+    }
+  
+    to {
+      background-position: left;
+    }
+  }
   body {
     min-height: 100dvh;
-    background-color: #f4f4f4;
+    background-image: url(images/bg.jpg);
+    background-position: center;
+    background-size: 300%;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-position: right;
+    animation-duration: 30s;
+    animation-name: moveBg;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
   }
-
   .article-summary-result {
     display: grid;
     grid-template-columns: 1fr 1fr;
